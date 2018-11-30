@@ -1,11 +1,11 @@
-# webpack-mpvue-plugin
+# webpack-mpvue-vendor-plugin
 
-> mpvue 资源路径解析插件
+> mpvue global 修正
 
 ## 使用示例：
 
 ```js
-const MpvuePlugin = require('webpack-mpvue-asset-plugin')
+const mpvueVendorPlugin = require('webpack-mpvue-vendor-plugin')
 // webpack config
 {
   entry: [],
@@ -14,7 +14,7 @@ const MpvuePlugin = require('webpack-mpvue-asset-plugin')
     filename: 'foo.bundle.js'
   },
   plugins: [
-    new MpvuePlugin()
+    new mpvueVendorPlugin()
   ]
 };
 ```
