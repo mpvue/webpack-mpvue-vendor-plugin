@@ -15,7 +15,7 @@ const mpvueVendorPlugin = require('webpack-mpvue-vendor-plugin')
   },
   plugins: [
     new mpvueVendorPlugin({
-      platform: process.argv
+      platform: process.env.PLATFORM
     })
   ]
 };

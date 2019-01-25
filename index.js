@@ -22,7 +22,7 @@ function mpvueVendorPlugin(options) {
 }
 
 mpvueVendorPlugin.prototype.apply = function(compiler) {
-  const isAlipay = this.options.platform && this.options.platform.includes('my');
+  const isAlipay = this.options.platform && this.options.platform === 'my';
   if (isAlipay) {
     compiler.plugin("emit", (compilation, callback) => {
       const regExp = /\.js$/;
