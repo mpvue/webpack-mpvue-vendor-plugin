@@ -14,7 +14,9 @@ const mpvueVendorPlugin = require('webpack-mpvue-vendor-plugin')
     filename: 'foo.bundle.js'
   },
   plugins: [
-    new mpvueVendorPlugin()
+    new mpvueVendorPlugin({
+      platform: process.env.PLATFORM
+    })
   ]
 };
 ```
