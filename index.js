@@ -11,7 +11,7 @@
 // Component变量只有在项目中通过json配置声明组件后，打包的时候才会声明赋值，否则访问不到
 const banner = `
   if (!global) {
-    var globalModule = require('global');
+    var globalModule = require('core-js').global;
     var Component = Component ? Component : globalModule.AFAppX.WorkerComponent;
     var global = globalModule.AFAppX.$global || {};
   }
