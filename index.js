@@ -50,7 +50,7 @@ mpvueVendorPlugin.prototype.apply = function(compiler) {
       const asset = compilation.assets[fileName];
       if (asset) {
         let fileContent = asset.source();
-        compilation.assets[fileName] = {
+        compilation.assets[fileName] = Object.assign(asset, {
           source: () => {
             let from = /g\s=\s\(function\(\)\s\{\r?\n?\s+return\sthis;\r?\n?\s*\}\)\(\)\;/;
             let to = `g = (function() { return typeof global !== 'undefined' ? global : this; })();`
@@ -59,8 +59,9 @@ mpvueVendorPlugin.prototype.apply = function(compiler) {
           },
           size: () => {
             return Buffer.byteLength(fileContent, 'utf8');
-          }
-        };
+          },
+          sourceAndMap: false
+        })
       }
     });
   });
